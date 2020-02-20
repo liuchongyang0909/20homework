@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhy.mapper.ArticleMapper">
+	<resultMap type="article" id="articleMap">
+		<id column="id" property="id"/>
+		<result column="title" property="title"/>
+		<result column="content" property="content"/>
+		<result column="created" property="created"/>
+	</resultMap>
+ 	<select id="select" resultMap="articleMap">
+ 		select * from cms_article
+ 	<where>
+ 		<if test="null!=name and name !=''">
+ 				and title like '%${name}%'
+ 		</if>
+ 		<if test="null!=day1 and day1!=''">
+				and created >= #{day1}
+			</if>
+			<if test="null!=day2 and day2!=''">
+				and created &lt;= #{day2}
+			</if>
+ 	</where>
+ 	</select>
+</mapper>

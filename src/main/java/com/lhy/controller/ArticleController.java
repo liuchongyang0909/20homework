@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.pagehelper.PageInfo;
-import com.lhy.bean.User;
+import com.lhy.bean.Article;
 import com.lhy.bean.Vo;
-import com.lhy.service.UserService;
+import com.lhy.service.ArticleService;
 
 @Controller
-public class UserController {
+public class ArticleController {
 	
 	@Autowired
-	UserService service;
+	ArticleService service;
 	
 	@RequestMapping("list")
 	public String list(Model m,@RequestParam(defaultValue = "1")int pageNum,Vo vo) {
-		PageInfo<User> info = service.select(vo, pageNum);
+		PageInfo<Article> info = service.select(vo, pageNum);
 		m.addAttribute("info",info);
 		return "list";
 	}

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.lhy.bean.Vo;
 
-public interface UserMapper {
+public interface ArticleMapper {
 	
 	List select(Vo vo);
 
