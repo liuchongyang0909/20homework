@@ -2,11 +2,11 @@
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
+<link href="<%=request.getContextPath() %>/css/index_work.css" rel="stylesheet">
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="<%=request.getContextPath() %>/css/index_work.css" rel="stylesheet">
 </head>
 <body>
 <form action="list" method="get">
